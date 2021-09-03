@@ -1,26 +1,22 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from 'react'
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
+import { MainContainer } from './styled-components/styled-components'
+import Welcome from './pages/welcome/Welcome'
+import ErrorPage from './pages/error/Errorpage'
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+const App = () => (
+    <React.StrictMode>
+        <Router>
+            <MainContainer>
+                <Switch>
+                    <Route exact={true} path="/">
+                        <Welcome />
+                    </Route>
+                    <Route component={ErrorPage} />
+                </Switch>
+            </MainContainer>
+        </Router>
+    </React.StrictMode>
+)
 
-export default App;
+export default App
