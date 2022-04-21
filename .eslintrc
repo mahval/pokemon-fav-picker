@@ -1,0 +1,83 @@
+{
+  "ignorePatterns": ["Dockerfile", "*.json", "*.md", ".*", "webpack.*", "jest.*"],
+  "extends": [
+    "prettier",
+    "eslint:recommended",
+    "plugin:react/recommended",
+    "plugin:@typescript-eslint/eslint-recommended",
+    "plugin:@typescript-eslint/recommended"
+  ],
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "sourceType": "module",
+    "project": "./tsconfig.json"
+  },
+  "plugins": [
+    "@typescript-eslint",
+    "react",
+    "prettier",
+    "prefer-arrow"
+  ],
+  "settings": {
+    "react": {
+      "version": "17"
+    }
+  },
+  "root": true,
+  "env": {
+    "browser": true,
+    "es6": true
+  },
+  "rules": {
+    // suppress errors for missing 'import React' in files
+    "react/react-in-jsx-scope": "off",
+    // allow jsx syntax in js files (for next.js project)
+    "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx", ".ts", ".tsx"] }],
+    "prettier/prettier": [
+      "error",
+      {
+        "semi": true,
+        "singleQuote": true,
+        "printWidth": 120,
+        "tabWidth": 2,
+        "endOfLine": "lf"
+      }
+    ],
+    "max-lines": ["error", {
+      "max": 400,
+      "skipBlankLines": false,
+      "skipComments": true
+    }],
+    "linebreak-style": ["error", "unix"],
+    "max-depth": ["error", { "max": 4 }],
+    "no-lonely-if": "error",
+    "complexity": ["error", { "max": 10 }],
+    "no-return-assign": ["error", "always"],
+    "no-unneeded-ternary": "error",
+    "arrow-body-style": ["error", "as-needed"],
+    "prefer-const": "error",
+    "prefer-destructuring": "error",
+    "padded-blocks": ["error", "never"],
+    "prefer-arrow/prefer-arrow-functions": [
+      "warn",
+      {
+        "disallowPrototype": true,
+        "singleReturnOnly": false,
+        "classPropertiesAllowed": false
+      }
+    ],
+    "comma-dangle": ["warn", "always-multiline"],
+    "no-duplicate-imports": "error",
+    "no-var": "error",
+    "no-useless-rename": "error",
+    "no-useless-return": "error",
+    "no-else-return": "error",
+    "prefer-spread": "error",
+    "prefer-object-spread": "error",
+    "space-before-blocks": ["error", {
+      "functions": "always"
+    }],
+    "@typescript-eslint/explicit-module-boundary-types": "off",
+    "@typescript-eslint/no-unused-vars": ["error"]
+  }
+}
