@@ -10,8 +10,8 @@ export const MainContainer = styled.div`
   background-size: cover;
 `;
 
-export const WelcomeContainer = styled.div`
-  padding: 150px 0;
+export const MainContentContainer = styled.div`
+  padding: 100px;
 `;
 
 export const PokemonDancingRow = styled.div`
