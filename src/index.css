@@ -13,5 +13,11 @@ body {
 html,
 body,
 #root {
-    height: 100%;
+    background-color: #87CD5A;
+    height: 100vh;
+}
+
+a {
+    text-decoration: none;
+    color: unset;
 }
